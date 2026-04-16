@@ -149,7 +149,7 @@ const Footer = () => (
               <div className="h-8 w-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
                 <Phone className="h-3.5 w-3.5 text-primary" />
               </div>
-              +91 99233 42709
+              +91 8793572269
             </a>
             <a
               href="mailto:faunapetcareclinic@gmail.com"

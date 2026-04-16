@@ -56,10 +56,68 @@ const Appointment = () => {
   const [selectedTime, setSelectedTime] = useState<string>();
   const [submitted, setSubmitted] = useState(false);
   const [step, setStep] = useState(0);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [formData, setFormData] = useState({
+    ownerName: '',
+    phone: '',
+    email: '',
+    petName: '',
+    petType: '',
+    breed: '',
+    age: '',
+    serviceNeeded: '',
+    reason: ''
+  });
+
+  const updateFormData = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    if (!date || !selectedTime) {
+      alert("Please select a date and time for your appointment.");
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/faunapetcareclinic@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          _subject: `New Appointment Request from ${formData.ownerName || 'Client'}`,
+          _template: "table",
+          "Owner Name": formData.ownerName,
+          "Phone": formData.phone,
+          "Email": formData.email,
+          "Pet Name": formData.petName,
+          "Pet Type": formData.petType,
+          "Breed": formData.breed,
+          "Age": formData.age,
+          "Service Needed": formData.serviceNeeded,
+          "Additional Notes": formData.reason,
+          "Preferred Date": format(date, "EEEE, MMMM d, yyyy"),
+          "Preferred Time": selectedTime
+        })
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        alert("There was a problem submitting the form. Please try again or contact us directly.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Error submitting the form. Please check your internet connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -247,7 +305,7 @@ const Appointment = () => {
 
             {/* Step 0 – Owner Info */}
             {step === 0 && (
-              <div className="p-7 md:p-10">
+              <form onSubmit={(e) => { e.preventDefault(); setStep(1); }} className="p-7 md:p-10">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-9 w-9 rounded-xl bg-primary/10 flex items-center justify-center">
                     <User className="h-4.5 w-4.5 text-primary" />
@@ -260,19 +318,25 @@ const Appointment = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div className="space-y-2">
-                    <Label htmlFor="owner" className="text-sm font-medium">Full Name</Label>
+                    <Label htmlFor="owner" className="text-sm font-medium">Full Name <span className="text-destructive">*</span></Label>
                     <Input
                       id="owner"
+                      value={formData.ownerName}
+                      onChange={(e) => updateFormData("ownerName", e.target.value)}
                       placeholder="e.g. Priya Sharma"
+                      required
                       className="h-11 rounded-xl bg-background border-border/70 focus:border-primary/50 transition-colors"
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="phone" className="text-sm font-medium">Phone Number</Label>
+                    <Label htmlFor="phone" className="text-sm font-medium">Phone Number <span className="text-destructive">*</span></Label>
                     <Input
                       id="phone"
                       type="tel"
+                      value={formData.phone}
+                      onChange={(e) => updateFormData("phone", e.target.value)}
                       placeholder="+91 98765 43210"
+                      required
                       className="h-11 rounded-xl bg-background border-border/70 focus:border-primary/50 transition-colors"
                     />
                   </div>
@@ -283,6 +347,8 @@ const Appointment = () => {
                     <Input
                       id="email"
                       type="email"
+                      value={formData.email}
+                      onChange={(e) => updateFormData("email", e.target.value)}
                       placeholder="you@example.com"
                       className="h-11 rounded-xl bg-background border-border/70 focus:border-primary/50 transition-colors"
                     />
@@ -290,18 +356,18 @@ const Appointment = () => {
                 </div>
 
                 <Button
+                  type="submit"
                   className="w-full mt-7 rounded-full h-12 text-sm font-semibold"
-                  onClick={() => setStep(1)}
                 >
                   Continue — Pet Details
                   <ChevronRight className="h-4 w-4 ml-1" />
                 </Button>
-              </div>
+              </form>
             )}
 
             {/* Step 1 – Pet Details */}
             {step === 1 && (
-              <div className="p-7 md:p-10">
+              <form onSubmit={(e) => { e.preventDefault(); setStep(2); }} className="p-7 md:p-10">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-9 w-9 rounded-xl bg-primary/10 flex items-center justify-center">
                     <PawPrint className="h-4.5 w-4.5 text-primary" />
@@ -314,16 +380,19 @@ const Appointment = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div className="space-y-2">
-                    <Label htmlFor="petName" className="text-sm font-medium">Pet's Name</Label>
+                    <Label htmlFor="petName" className="text-sm font-medium">Pet's Name <span className="text-destructive">*</span></Label>
                     <Input
                       id="petName"
+                      value={formData.petName}
+                      onChange={(e) => updateFormData("petName", e.target.value)}
                       placeholder="e.g. Bruno"
+                      required
                       className="h-11 rounded-xl bg-background border-border/70 focus:border-primary/50 transition-colors"
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label className="text-sm font-medium">Pet Type</Label>
-                    <Select>
+                    <Label className="text-sm font-medium">Pet Type <span className="text-destructive">*</span></Label>
+                    <Select value={formData.petType} onValueChange={(v) => updateFormData("petType", v)} required>
                       <SelectTrigger className="h-11 rounded-xl bg-background border-border/70">
                         <SelectValue placeholder="Select type" />
                       </SelectTrigger>
@@ -342,6 +411,8 @@ const Appointment = () => {
                     </Label>
                     <Input
                       id="breed"
+                      value={formData.breed}
+                      onChange={(e) => updateFormData("breed", e.target.value)}
                       placeholder="e.g. Golden Retriever"
                       className="h-11 rounded-xl bg-background border-border/70 focus:border-primary/50 transition-colors"
                     />
@@ -352,13 +423,15 @@ const Appointment = () => {
                     </Label>
                     <Input
                       id="age"
+                      value={formData.age}
+                      onChange={(e) => updateFormData("age", e.target.value)}
                       placeholder="e.g. 2 years"
                       className="h-11 rounded-xl bg-background border-border/70 focus:border-primary/50 transition-colors"
                     />
                   </div>
                   <div className="space-y-2 sm:col-span-2">
-                    <Label className="text-sm font-medium">Service Needed</Label>
-                    <Select>
+                    <Label className="text-sm font-medium">Service Needed <span className="text-destructive">*</span></Label>
+                    <Select value={formData.serviceNeeded} onValueChange={(v) => updateFormData("serviceNeeded", v)} required>
                       <SelectTrigger className="h-11 rounded-xl bg-background border-border/70">
                         <SelectValue placeholder="Select a service" />
                       </SelectTrigger>
@@ -379,6 +452,8 @@ const Appointment = () => {
                     </Label>
                     <Textarea
                       id="reason"
+                      value={formData.reason}
+                      onChange={(e) => updateFormData("reason", e.target.value)}
                       placeholder="Any symptoms, concerns, or things we should know beforehand..."
                       rows={3}
                       className="rounded-xl bg-background border-border/70 focus:border-primary/50 transition-colors resize-none"
@@ -388,6 +463,7 @@ const Appointment = () => {
 
                 <div className="flex gap-3 mt-7">
                   <Button
+                    type="button"
                     variant="outline"
                     className="rounded-full h-12 px-6 text-sm"
                     onClick={() => setStep(0)}
@@ -395,14 +471,14 @@ const Appointment = () => {
                     Back
                   </Button>
                   <Button
+                    type="submit"
                     className="flex-1 rounded-full h-12 text-sm font-semibold"
-                    onClick={() => setStep(2)}
                   >
                     Continue — Schedule
                     <ChevronRight className="h-4 w-4 ml-1" />
                   </Button>
                 </div>
-              </div>
+              </form>
             )}
 
             {/* Step 2 – Schedule */}
@@ -421,7 +497,7 @@ const Appointment = () => {
 
                   {/* Calendar */}
                   <div className="space-y-2 mb-6">
-                    <Label className="text-sm font-medium">Preferred Date</Label>
+                    <Label className="text-sm font-medium">Preferred Date <span className="text-destructive">*</span></Label>
                     <Popover>
                       <PopoverTrigger asChild>
                         <Button
@@ -450,23 +526,23 @@ const Appointment = () => {
 
                   {/* Time slots */}
                   <div className="space-y-2 mb-6">
-                    <Label className="text-sm font-medium">Preferred Time Slot</Label>
+                    <Label className="text-sm font-medium">Preferred Time Slot <span className="text-destructive">*</span></Label>
                     <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
-                      {timeSlots.map((t) => (
-                        <button
-                          key={t}
-                          type="button"
-                          onClick={() => setSelectedTime(t)}
-                          className={cn(
-                            "rounded-xl border py-2 text-xs font-medium transition-all",
-                            selectedTime === t
-                              ? "border-primary bg-primary/10 text-primary"
-                              : "border-border bg-background text-muted-foreground hover:border-primary/40 hover:text-foreground"
-                          )}
-                        >
-                          {t}
-                        </button>
-                      ))}
+                       {timeSlots.map((t) => (
+                         <button
+                           key={t}
+                           type="button"
+                           onClick={() => setSelectedTime(t)}
+                           className={cn(
+                             "rounded-xl border py-2 text-xs font-medium transition-all",
+                             selectedTime === t
+                               ? "border-primary bg-primary/10 text-primary"
+                               : "border-border bg-background text-muted-foreground hover:border-primary/40 hover:text-foreground"
+                           )}
+                         >
+                           {t}
+                         </button>
+                       ))}
                     </div>
                   </div>
 
@@ -502,15 +578,21 @@ const Appointment = () => {
                       variant="outline"
                       className="rounded-full h-12 px-6 text-sm"
                       onClick={() => setStep(1)}
+                      disabled={isSubmitting}
                     >
                       Back
                     </Button>
                     <Button
                       type="submit"
+                      disabled={!date || !selectedTime || isSubmitting}
                       className="flex-1 rounded-full h-12 text-sm font-semibold shadow-lg shadow-primary/20"
                     >
-                      <MessageSquare className="h-4 w-4 mr-2" />
-                      Confirm Appointment
+                      {isSubmitting ? "Submitting..." : (
+                        <>
+                          <MessageSquare className="h-4 w-4 mr-2" />
+                          Confirm Appointment
+                        </>
+                      )}
                     </Button>
                   </div>
                 </div>

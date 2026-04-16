@@ -5,7 +5,7 @@ import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 
 const contactInfo = [
-  { icon: Phone, label: "Phone", value: "+91 99233 42709", href: "tel:+919923342709", gradient: "from-primary/15 to-primary/5" },
+  { icon: Phone, label: "Phone", value: "+91 8793572269", href: "tel:+919923342709", gradient: "from-primary/15 to-primary/5" },
   { icon: Mail, label: "Email", value: "faunapetcareclinic@gmail.com", href: "mailto:faunapetcareclinic@gmail.com", gradient: "from-accent/15 to-accent/5" },
   { icon: MapPin, label: "Address", value: "Shop No. 7, Eraville Complex, Survey No. 182, Tupe Patil Road, Behind Amanora Mall, Hadapsar, Pune – 411028", gradient: "from-primary/15 to-primary/5" },
   { icon: Clock, label: "Hours", value: "Mon–Sat: 9:00 AM – 7:00 PM", gradient: "from-accent/15 to-accent/5" },
@@ -22,9 +22,9 @@ const fadeUp = {
 
 const Contact = () => (
   <Layout>
-    <SEO 
+    <SEO
       title="Contact Us — Get in Touch"
-      description="Contact faunaPetcare Clinic in Hadapsar, Pune. Call +91 99233 42709, email us, or visit our clinic for premium pet healthcare services."
+      description="Contact faunaPetcare Clinic in Hadapsar, Pune. Call +91 8793572269, email us, or visit our clinic for premium pet healthcare services."
       canonical="/contact"
     />
     <section className="relative py-24 md:py-32 overflow-hidden">
@@ -73,7 +73,7 @@ const Contact = () => (
         <Card className="border-0 overflow-hidden premium-border hover-glow card-elevated">
           <iframe
             title="faunaPetcare Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4499.100844256314!2d73.93866918853621!3d18.516345627534015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c34ca3bce077%3A0x114f6648b9f367f!2sFauna%20Pet%20Care%20Clinic!5e0!3m2!1sen!2sin!4v1776140487828!5m2!1sen!2sin" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4499.100844256314!2d73.93866918853621!3d18.516345627534015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c34ca3bce077%3A0x114f6648b9f367f!2sFauna%20Pet%20Care%20Clinic!5e0!3m2!1sen!2sin!4v1776140487828!5m2!1sen!2sin"
             width="100%"
             height="500"
             style={{ border: 0 }}

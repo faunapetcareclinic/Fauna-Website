@@ -128,7 +128,7 @@ const faqCategories = [
 
 const Faq = () => (
   <Layout>
-    <SEO 
+    <SEO
       title="FAQ — Frequently Asked Questions"
       description="Find answers to common questions about veterinary services, appointments, pricing, and pet care at faunaPetcare Clinic in Pune."
       canonical="/faq"
@@ -149,7 +149,7 @@ const Faq = () => (
             "name": "How do I book an appointment?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "You can book an appointment online through our website or call us at +91 99233 42709."
+              "text": "You can book an appointment online through our website or call us at +91 8793572269."
             }
           },
           {
