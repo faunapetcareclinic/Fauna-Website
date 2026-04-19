@@ -254,15 +254,15 @@ function GalleryCard({
           </div>
           
           {/* Category badge */}
-          <div className="absolute top-3 left-3">
+          {/* <div className="absolute top-3 left-3">
             <span className="px-3 py-1 text-xs font-medium bg-primary/90 text-white rounded-full capitalize">
               {image.category}
             </span>
-          </div>
+          </div> */}
         </div>
         
         {/* Card content */}
-        <div className="p-4 bg-gradient-to-br from-card to-card/50">
+        {/* <div className="p-4 bg-gradient-to-br from-card to-card/50">
           <h3 className="font-heading font-semibold text-foreground group-hover:text-primary transition-colors">
             {image.label}
           </h3>
@@ -270,7 +270,7 @@ function GalleryCard({
             <Layers className="w-3 h-3" />
             Click to enlarge
           </p>
-        </div>
+        </div> */}
         
         {/* Hover border effect */}
         <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary/30 rounded-lg transition-colors duration-300 pointer-events-none" />

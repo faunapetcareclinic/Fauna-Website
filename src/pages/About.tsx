@@ -91,9 +91,11 @@ const About = () => (
               <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center">
                 <Stethoscope className="h-5 w-5 text-primary" />
               </div>
-              <p className="font-heading font-semibold">Human‑grade standards</p>
+              <p className="font-heading font-semibold">Care, You Can Trust</p>
             </div>
-            <p className="text-sm text-muted-foreground mt-3">Sterile surgical suites, advanced monitoring, and gentle protocols.</p>
+            <p className="text-sm text-muted-foreground mt-3">
+              Simple, effective clinical practices with attentive monitoring and a gentle approach—supported by grooming and nutrition guidance to keep your pet healthy, comfortable, and well cared for.
+            </p>
           </div>
         </div>
       </Card>

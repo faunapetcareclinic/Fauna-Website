@@ -37,10 +37,10 @@ import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 
 const highlights = [
-  { icon: Shield, label: "Trusted by 15,000+ pets", sub: "Since 2008" },
-  { icon: Clock, label: "Quick confirmation", sub: "Within 2 hours" },
-  { icon: HeartPulse, label: "Expert veterinarians", sub: "15+ years exp." },
-  { icon: Star, label: "4.9 rating", sub: "312 reviews" },
+  { icon: Shield, label: "Trusted by pet parents", sub: "Quality care & hygiene" },
+  { icon: Clock, label: "Flexible timings", sub: "Morning & evening slots" },
+  { icon: HeartPulse, label: "Experienced care", sub: "10+ years of practice" },
+  { icon: Star, label: "Happy pets & owners", sub: "Care with compassion" },
 ];
 
 const steps = ["Pet Owner Info", "Pet Details", "Schedule"];

@@ -36,10 +36,10 @@ const services = [
 ];
 
 const stats = [
-  { icon: Users, value: "10,000+", label: "Happy Pets" },
+  { icon: Users, value: "1,000+", label: "Happy Pets" },
   { icon: Award, value: "10+", label: "Years Experience" },
-  { icon: Shield, value: "99%", label: "Success Rate" },
-  { icon: Star, value: "4.9", label: "Google Rating" },
+  { icon: Shield, value: "Safe & Caring", label: "Trusted Care" },
+  { icon: Star, value: "4.8", label: "Google Rating" },
 ];
 
 const testimonials = [
@@ -90,7 +90,7 @@ const Index = () => {
     }),
   };
 
-  const swipeConfidenceThreshold = 10000;
+  const swipeConfidenceThreshold = 1000;
   const swipePower = (offset: number, velocity: number) => {
     return Math.abs(offset) * velocity;
   };
@@ -136,7 +136,7 @@ const Index = () => {
               transition={{ delay: 0.3, duration: 0.7 }}
               className="text-primary-foreground/70 text-lg md:text-xl max-w-lg mb-12 font-light leading-relaxed"
             >
-              Experience veterinary care reimagined — premium treatments, compassionate experts, and a space your pet will love.
+              His Creation to Our Care <br /> Experience veterinary care reimagined — premium treatments, compassionate experts, and a space your pet will love.
             </motion.p>
 
             <motion.div
@@ -270,8 +270,7 @@ const Index = () => {
                 <div className="flex gap-0.5 mb-1">
                   {[1, 2, 3, 4, 5].map(n => <Star key={n} className="h-3.5 w-3.5 fill-accent text-accent" />)}
                 </div>
-                <p className="text-xs text-foreground font-medium">4.9 / 5 Rating</p>
-                <p className="text-[10px] text-muted-foreground mt-0.5">Based on 2,400+ reviews</p>
+                <p className="text-xs text-foreground font-medium">4.8 / 5 Rating</p>
               </div>
             </div>
           </motion.div>
@@ -282,20 +281,28 @@ const Index = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
           >
-            <p className="text-accent text-sm font-semibold uppercase tracking-[0.2em] mb-4">Meet Our Expert</p>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+            <p className="text-accent text-sm font-semibold uppercase tracking-[0.2em] mb-4">
+              Meet Our Expert
+            </p>
+
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-2 leading-tight">
               Dr. Ruchali Ghatge
             </h2>
+
+            <p className="text-sm text-muted-foreground mb-6">MSVC9548</p>
+
             <p className="text-muted-foreground mb-6 leading-relaxed text-lg">
-              With over 10 years of experience in veterinary medicine, Dr. Ruchali Ghatge leads our clinic with exceptional passion and expertise. She specializes in small animal medicine, advanced diagnostics, and innovative surgical care. In addition to her core expertise, she offers comprehensive health consultations, personalized nutrition consultations, and guidance on medicated pet food. Dr. Ghatge also provides specialized care for exotic animals, along with safe and comfortable cat and small animal daycare services.
+              Fauna Pet Care is owned and led by a dedicated veterinarian with over 9 years of hands-on experience in animal healthcare. Built from a personal vision of compassionate and responsible veterinary care, the clinic reflects her belief that every animal deserves time, attention, and thoughtful treatment. Working across small and large animals, she combines strong clinical expertise with a calm, steady approach to diagnosis, treatment, and surgical care.
             </p>
-            <blockquote className="border-l-2 border-accent pl-6 my-8">
-              <p className="italic text-foreground/80 text-lg leading-relaxed">
-                "Every pet that walks through our doors receives the same love and attention as my own. We believe in human-grade care for every furry family member."
-              </p>
-            </blockquote>
+
+            <p className="text-muted-foreground mb-8 leading-relaxed text-lg">
+              Every consultation is guided by intent, not urgency—ensuring each pet receives focused, individualized attention. Along with medical and surgical services, she emphasizes preventive health, nutrition, and long-term well-being, creating a complete circle of care rooted in trust, compassion, and responsibility.
+            </p>
+
             <Button asChild className="rounded-full px-10 py-6 text-base shadow-lg shadow-primary/20">
-              <Link to="/appointment">Book a Visit <ArrowRight className="ml-2 h-4 w-4" /></Link>
+              <Link to="/appointment">
+                Book a Visit <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
             </Button>
           </motion.div>
         </div>
@@ -348,7 +355,7 @@ const Index = () => {
                 <Star className="h-4 w-4 fill-current" />
                 <Star className="h-4 w-4 fill-current" />
               </div>
-              <span className="font-medium text-muted-foreground mt-0.5"><span className="text-foreground font-bold">4.9/5</span> on Google</span>
+              <span className="font-medium text-muted-foreground mt-0.5"><span className="text-foreground font-bold">4.8/5</span> on Google</span>
             </div>
           </motion.div>
         </div>

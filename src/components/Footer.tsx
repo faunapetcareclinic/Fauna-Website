@@ -7,7 +7,7 @@ const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
 const navLinks = ["Home", "About", "Services", "Doctors", "FAQ", "Gallery", "Contact"];
 
-const services = ["Health Checkups", "Vaccination", "Surgery", "Grooming", "Dental Care", "Emergency Care"];
+const services = ["Health Checkups", "Vaccination", "Surgery", "Grooming",];
 
 const Footer = () => (
   <footer className="relative overflow-hidden border-t border-border">
@@ -103,7 +103,7 @@ const Footer = () => (
               <Instagram className="h-3.5 w-3.5" />
             </a>
             <a
-              href="https://www.facebook.com/faunapetcareclinic"
+              href="https://www.facebook.com/share/1HDvedUJUJ/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
