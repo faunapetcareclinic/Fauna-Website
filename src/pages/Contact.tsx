@@ -5,7 +5,7 @@ import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 
 const contactInfo = [
-  { icon: Phone, label: "Phone", value: "+91 8793572269", href: "tel:+919923342709", gradient: "from-primary/15 to-primary/5" },
+  { icon: Phone, label: "Phone", value: "+91 9923342709", href: "tel:+919923342709", gradient: "from-primary/15 to-primary/5" },
   { icon: Mail, label: "Email", value: "faunapetcareclinic@gmail.com", href: "mailto:faunapetcareclinic@gmail.com", gradient: "from-accent/15 to-accent/5" },
   { icon: MapPin, label: "Address", value: "Shop No. 7, Eraville Complex, Survey No. 182, Tupe Patil Road, Behind Amanora Mall, Hadapsar, Pune – 411028", gradient: "from-primary/15 to-primary/5" },
   { icon: Clock, label: "Hours", value: "Mon–Sat: 9:00 AM – 7:00 PM", gradient: "from-accent/15 to-accent/5" },
@@ -24,7 +24,7 @@ const Contact = () => (
   <Layout>
     <SEO
       title="Contact Us — Get in Touch"
-      description="Contact faunaPetcare Clinic in Hadapsar, Pune. Call +91 8793572269, email us, or visit our clinic for premium pet healthcare services."
+      description="Contact faunaPetcare Clinic in Hadapsar, Pune. Call +91 9923342709, email us, or visit our clinic for premium pet healthcare services."
       canonical="/contact"
     />
     <section className="relative py-24 md:py-32 overflow-hidden">

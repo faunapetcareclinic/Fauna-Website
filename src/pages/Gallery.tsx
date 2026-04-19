@@ -56,6 +56,18 @@ import checkup16 from "@/assets/Checkup-Images-Doctor (16).webp"
 import checkup17 from "@/assets/Checkup-Images-Doctor (17).webp"
 import checkup18 from "@/assets/Checkup-Images-Doctor (18).webp"
 
+// New Doctor Images
+import newdoc1 from "@/assets/newdoctor-images (1).jpg"
+import newdoc2 from "@/assets/newdoctor-images (2).jpg"
+import newdoc3 from "@/assets/newdoctor-images (3).jpg"
+import newdoc4 from "@/assets/newdoctor-images (4).jpg"
+import newdoc5 from "@/assets/newdoctor-images (5).jpg"
+import newdoc6 from "@/assets/newdoctor-images (6).jpg"
+import newdoc7 from "@/assets/newdoctor-images (7).jpg"
+import newdoc8 from "@/assets/newdoctor-images (8).jpg"
+import newdoc9 from "@/assets/checkupimages (1).jpg"
+import newdoc10 from "@/assets/checkupimages (2).jpg"
+
 // Categories with icons
 const categories = [
   { id: "all", label: "All Photos", icon: Grid3X3 },
@@ -110,6 +122,16 @@ const allImages = [
   { src: doctorPremium, label: "Expert Doctors", category: "team" },
   { src: doctor, label: "Veterinary Care", category: "team" },
   { src: doctorImage, label: "Compassionate Care", category: "team" },
+  { src: newdoc1, label: "Veterinary Specialist", category: "team" },
+  { src: newdoc2, label: "Veterinary Specialist", category: "team" },
+  { src: newdoc3, label: "Veterinary Specialist", category: "team" },
+  { src: newdoc4, label: "Veterinary Specialist", category: "team" },
+  { src: newdoc5, label: "Veterinary Specialist", category: "team" },
+  { src: newdoc6, label: "Veterinary Specialist", category: "team" },
+  { src: newdoc7, label: "Veterinary Specialist", category: "team" },
+  { src: newdoc8, label: "Veterinary Specialist", category: "team" },
+  { src: newdoc9, label: "Veterinary Specialist", category: "team" },
+  { src: newdoc10, label: "Veterinary Specialist", category: "team" },
 ]
 
 // Lightbox Component

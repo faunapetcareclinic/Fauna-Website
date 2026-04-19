@@ -80,9 +80,9 @@ const Appointment = () => {
       alert("Please select a date and time for your appointment.");
       return;
     }
-    
+
     setIsSubmitting(true);
-    
+
     try {
       const response = await fetch("https://formsubmit.co/ajax/faunapetcareclinic@gmail.com", {
         method: "POST",
@@ -123,7 +123,7 @@ const Appointment = () => {
   if (submitted) {
     return (
       <Layout>
-        <SEO 
+        <SEO
           title="Appointment Confirmed — Thank You"
           description="Your appointment at faunaPetcare Clinic has been booked successfully. We'll contact you shortly to confirm."
           canonical="/appointment"
@@ -166,7 +166,7 @@ const Appointment = () => {
               </div>
               <div className="flex items-center gap-3 text-sm text-muted-foreground">
                 <HeartPulse className="h-4 w-4 text-primary shrink-0" />
-                Dr. Ruchali Ghatage — Chief Veterinarian
+                Dr. Ruchali Ghatge — Chief Veterinarian
               </div>
             </div>
 
@@ -184,7 +184,7 @@ const Appointment = () => {
 
   return (
     <Layout>
-      <SEO 
+      <SEO
         title="Book Appointment — Schedule Your Visit"
         description="Book an appointment at faunaPetcare Clinic for premium veterinary care. Schedule health checkups, vaccinations, surgery consultations, and more online."
         canonical="/appointment"
@@ -276,8 +276,8 @@ const Appointment = () => {
                   i === step
                     ? "bg-primary text-primary-foreground"
                     : i < step
-                    ? "text-primary cursor-pointer hover:bg-primary/10"
-                    : "text-muted-foreground cursor-default"
+                      ? "text-primary cursor-pointer hover:bg-primary/10"
+                      : "text-muted-foreground cursor-default"
                 )}
               >
                 <span className={cn(
@@ -528,21 +528,21 @@ const Appointment = () => {
                   <div className="space-y-2 mb-6">
                     <Label className="text-sm font-medium">Preferred Time Slot <span className="text-destructive">*</span></Label>
                     <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
-                       {timeSlots.map((t) => (
-                         <button
-                           key={t}
-                           type="button"
-                           onClick={() => setSelectedTime(t)}
-                           className={cn(
-                             "rounded-xl border py-2 text-xs font-medium transition-all",
-                             selectedTime === t
-                               ? "border-primary bg-primary/10 text-primary"
-                               : "border-border bg-background text-muted-foreground hover:border-primary/40 hover:text-foreground"
-                           )}
-                         >
-                           {t}
-                         </button>
-                       ))}
+                      {timeSlots.map((t) => (
+                        <button
+                          key={t}
+                          type="button"
+                          onClick={() => setSelectedTime(t)}
+                          className={cn(
+                            "rounded-xl border py-2 text-xs font-medium transition-all",
+                            selectedTime === t
+                              ? "border-primary bg-primary/10 text-primary"
+                              : "border-border bg-background text-muted-foreground hover:border-primary/40 hover:text-foreground"
+                          )}
+                        >
+                          {t}
+                        </button>
+                      ))}
                     </div>
                   </div>
 
@@ -567,7 +567,7 @@ const Appointment = () => {
                       )}
                       <div className="flex items-center gap-2 text-muted-foreground">
                         <HeartPulse className="h-3.5 w-3.5 text-primary" />
-                        Dr. Ruchali Ghatage
+                        Dr. Ruchali Ghatge
                       </div>
                     </motion.div>
                   )}

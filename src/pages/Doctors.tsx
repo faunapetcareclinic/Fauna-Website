@@ -20,7 +20,7 @@ import doctor1 from "@/assets/docImage.webp";
 import logoImg from "@/assets/logo.webp";
 
 const doctor = {
-  name: "Dr. Ruchali Ghatage",
+  name: "Dr. Ruchali Ghatge",
   role: "Chief Veterinarian & Founder",
   professionalTitle: "Veterinary Physician, Surgeon and Animal Health/Nutrition Consultant",
   registrationNumber: "MSVC9548",
@@ -39,7 +39,7 @@ const doctor = {
     { label: "Preventive Healthcare", icon: CheckCircle2 },
     { label: "Diagnostic Imaging", icon: Stethoscope },
   ],
-  about: `Dr. Ruchali Ghatage is a distinguished veterinarian with over 10 years of dedicated service to animal health in Pune. Known for her exceptional surgical precision and compassionate approach, she has transformed the lives of thousands of pets and their families. 
+  about: `Dr. Ruchali Ghatge is a distinguished veterinarian with over 10 years of dedicated service to animal health in Pune. Known for her exceptional surgical precision and compassionate approach, she has transformed the lives of thousands of pets and their families. 
 
 Her expertise spans small animal surgery, diagnostic imaging, and managing complex multi-system diseases — making her one of the most trusted names in veterinary care across the region. She believes every pet deserves the same standard of care as any human patient.`,
   highlights: [
@@ -52,14 +52,14 @@ Her expertise spans small animal surgery, diagnostic imaging, and managing compl
 
 const Doctors = () => (
   <Layout>
-    <SEO 
+    <SEO
       title="Our Doctors — Expert Veterinarians"
-      description="Meet Dr. Ruchali Ghatage, our chief veterinarian with 15+ years of experience in surgery, internal medicine, and animal health care at faunaPetcare Clinic."
+      description="Meet Dr. Ruchali Ghatge, our chief veterinarian with 15+ years of experience in surgery, internal medicine, and animal health care at faunaPetcare Clinic."
       canonical="/doctors"
       schemaMarkup={{
         "@context": "https://schema.org",
         "@type": "Physician",
-        "name": "Dr. Ruchali Ghatage",
+        "name": "Dr. Ruchali Ghatge",
         "image": "https://faunapetcareclinic.com/src/assets/docImage.webp",
         "url": "https://faunapetcareclinic.com/doctors",
         "telephone": "+919923342709",

@@ -106,7 +106,7 @@ const faqCategories = [
       },
       {
         q: "Are there any free or subsidized services available?",
-        a: "Dr. Ruchali Ghatage runs free monthly wellness camps for stray and community animals. We also offer discounted services for registered NGOs and animal rescue organizations. Contact us to learn more.",
+        a: "Dr. Ruchali Ghatge runs free monthly wellness camps for stray and community animals. We also offer discounted services for registered NGOs and animal rescue organizations. Contact us to learn more.",
       },
     ],
   },
@@ -149,7 +149,7 @@ const Faq = () => (
             "name": "How do I book an appointment?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "You can book an appointment online through our website or call us at +91 8793572269."
+              "text": "You can book an appointment online through our website or call us at +91 9923342709."
             }
           },
           {

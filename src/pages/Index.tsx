@@ -118,16 +118,6 @@ const Index = () => {
 
         <motion.div style={{ opacity: heroOpacity }} className="relative container mx-auto px-4 py-32 md:py-40">
           <div className="max-w-2xl">
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full glass-card text-accent text-xs font-semibold uppercase tracking-[0.15em] mb-8"
-            >
-              <span className="h-2 w-2 rounded-full bg-accent animate-pulse" />
-              Premium Pet Healthcare
-            </motion.div>
-
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -274,7 +264,7 @@ const Index = () => {
           >
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-br from-primary/10 via-accent/5 to-transparent rounded-[2rem] blur-2xl" />
-              <img src={doctorImg} alt="Dr. Ruchali Ghatage" loading="lazy" width={800} height={1024} className="rounded-3xl w-full max-w-md mx-auto relative z-10 shadow-2xl" />
+              <img src={doctorImg} alt="Dr. Ruchali Ghatge" loading="lazy" width={800} height={1024} className="rounded-3xl w-full max-w-md mx-auto relative z-10 shadow-2xl" />
               <div className="absolute -bottom-6 -right-6 glass-card-strong rounded-2xl p-5 z-20 max-w-[200px]">
                 <div className="flex gap-0.5 mb-1">
                   {[1, 2, 3, 4, 5].map(n => <Star key={n} className="h-3.5 w-3.5 fill-accent text-accent" />)}
@@ -293,10 +283,10 @@ const Index = () => {
           >
             <p className="text-accent text-sm font-semibold uppercase tracking-[0.2em] mb-4">Meet Our Expert</p>
             <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-              Dr. Ruchali Ghatage
+              Dr. Ruchali Ghatge
             </h2>
             <p className="text-muted-foreground mb-6 leading-relaxed text-lg">
-              With over 10 years of experience in veterinary medicine, Dr. Parker leads our team with unmatched passion and expertise. She specializes in small animal medicine, advanced diagnostics, and surgical innovation.
+              With over 10 years of experience in veterinary medicine, Dr. Ruchali Ghatge leads our clinic with exceptional passion and expertise. She specializes in small animal medicine, advanced diagnostics, and innovative surgical care. In addition to her core expertise, she offers comprehensive health consultations, personalized nutrition consultations, and guidance on medicated pet food. Dr. Ghatge also provides specialized care for exotic animals, along with safe and comfortable cat and small animal daycare services.
             </p>
             <blockquote className="border-l-2 border-accent pl-6 my-8">
               <p className="italic text-foreground/80 text-lg leading-relaxed">
@@ -522,9 +512,8 @@ const Index = () => {
             <p className="opacity-70 mb-10 max-w-lg mx-auto text-lg">Your pet deserves world-class care. Walk in or book online.</p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-2xl mx-auto mb-12">
               {[
-                { day: "Mon – Fri", time: "9:00 AM – 8:00 PM" },
-                { day: "Saturday", time: "9:00 AM – 5:00 PM" },
-                { day: "Sunday", time: "10:00 AM – 2:00 PM" },
+                { day: "Mon – Fri", time: "10:00 AM – 2:30 PM & 6:00 PM – 8:00 PM" },
+                { day: "Sunday", time: "6:00 PM – 8:00 PM" },
               ].map((t) => (
                 <div key={t.day} className="bg-primary-foreground/10 backdrop-blur-md rounded-2xl p-6 border border-primary-foreground/10 hover:bg-primary-foreground/15 transition-colors duration-300">
                   <p className="font-heading font-semibold text-base">{t.day}</p>

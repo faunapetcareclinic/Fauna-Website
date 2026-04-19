@@ -73,9 +73,11 @@ const Footer = () => (
             <div className="h-6 w-6 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
               <Clock className="h-3 w-3 text-primary" />
             </div>
-            <span>Mon – Sat &nbsp;·&nbsp; 9:00 AM – 7:00 PM</span>
+            <span>
+              Mon – Sat &nbsp;·&nbsp; <br /> 10:00 AM – 2:30 PM <br />
+              5:00 PM – 9:30 PM
+            </span>
           </div>
-
           {/* Socials */}
           <div className="flex gap-2.5">
             <a
@@ -149,7 +151,7 @@ const Footer = () => (
               <div className="h-8 w-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
                 <Phone className="h-3.5 w-3.5 text-primary" />
               </div>
-              +91 8793572269
+              +91 9923342709
             </a>
             <a
               href="mailto:faunapetcareclinic@gmail.com"
