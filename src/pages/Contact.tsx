@@ -5,7 +5,17 @@ import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 
 const contactInfo = [
-  { icon: Phone, label: "Phone", value: "+91 9923342709", href: "tel:+919923342709", gradient: "from-primary/15 to-primary/5" },
+  { 
+    icon: Phone, 
+    label: "Phone", 
+    content: (
+      <div className="flex flex-col gap-1 text-sm text-primary">
+        <a href="tel:+919923342709" className="hover:underline">+91 9923342709</a>
+        <a href="tel:+918793572269" className="hover:underline">+91 8793572269</a>
+      </div>
+    ),
+    gradient: "from-primary/15 to-primary/5" 
+  },
   { icon: Mail, label: "Email", value: "faunapetcareclinic@gmail.com", href: "mailto:faunapetcareclinic@gmail.com", gradient: "from-accent/15 to-accent/5" },
   { icon: MapPin, label: "Address", value: "Shop No. 7, Eraville Complex, Survey No. 182, Tupe Patil Road, Behind Amanora Mall, Hadapsar, Pune – 411028", gradient: "from-primary/15 to-primary/5" },
   { icon: Clock, label: "Hours", value: "Mon–Sat: 9:00 AM – 7:00 PM", gradient: "from-accent/15 to-accent/5" },
@@ -58,7 +68,9 @@ const Contact = () => (
                   <c.icon className="h-7 w-7 text-primary" />
                 </div>
                 <h3 className="font-heading font-semibold text-foreground mb-3 text-lg">{c.label}</h3>
-                {c.href ? (
+                {c.content ? (
+                  c.content
+                ) : c.href ? (
                   <a href={c.href} className="text-sm text-primary hover:underline">{c.value}</a>
                 ) : (
                   <p className="text-sm text-muted-foreground leading-relaxed">{c.value}</p>
