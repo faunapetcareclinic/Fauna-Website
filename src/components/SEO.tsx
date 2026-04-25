@@ -95,7 +95,7 @@ const SEO = ({
       {/* Additional SEO Meta Tags */}
       <meta name="theme-color" content="#0ea5e9" />
       <meta name="msapplication-TileColor" content="#0ea5e9" />
-      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+      <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" />
 
       {/* Geo Meta Tags */}
       <meta name="geo.region" content="IN-MH" />
