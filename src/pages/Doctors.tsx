@@ -28,9 +28,8 @@ const doctor = {
   img: doctor1,
   tagline: "His Creation to Our Care.",
   rating: 4.8,
-  reviews: 312,
-  experience: "15+ Years",
-  location: "Pimpri-Chinchwad, Pune",
+  experience: "10+ Years",
+  location: "Shop No. 7, Eraville Complex, Survey No. 182, Tupe Patil Road, Behind Amanora Mall, Hadapsar, Pune – 411028, Maharashtra",
   qualifications: ["BVSc & AH (MAFSU)", "MVSc – Surgery & Radiology"],
   specializations: [
     { label: "Soft Tissue Surgery", icon: Syringe },
@@ -144,11 +143,7 @@ const Doctors = () => (
                 <span className="font-heading font-bold text-lg leading-none">{doctor.experience}</span>
                 <span className="text-[11px] text-muted-foreground">Exp.</span>
               </div>
-              <div className="flex flex-col items-center gap-1 rounded-xl bg-primary/10 p-3 text-center">
-                <Star className="h-4 w-4 text-primary" />
-                <span className="font-heading font-bold text-lg leading-none">{doctor.reviews}</span>
-                <span className="text-[11px] text-muted-foreground">Reviews</span>
-              </div>
+              
             </div>
 
             {/* Contact / Location */}
@@ -159,11 +154,17 @@ const Doctors = () => (
               </div>
               <div className="flex items-center gap-2.5 text-sm text-muted-foreground">
                 <Calendar className="h-4 w-4 text-primary shrink-0" />
-                Mon – Sat · 9:00 AM – 7:00 PM
+                <div className="flex flex-col">
+                  <span>Mon – Sat · 10:00 AM – 2:30 PM, 5:00 PM – 9:30 PM</span>
+                  <span>Sunday · 6:00 PM – 8:00 PM</span>
+                </div>
               </div>
               <div className="flex items-center gap-2.5 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4 text-primary shrink-0" />
-                +91 98765 43210
+                <div className="flex flex-col">
+                  <a href="tel:+919923342709" className="hover:text-primary transition-colors duration-200">+91 9923342709</a>
+                  <a href="tel:+918793572269" className="hover:text-primary transition-colors duration-200">+91 8793572269</a>
+                </div>
               </div>
             </div>
 

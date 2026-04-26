@@ -68,6 +68,21 @@ import newdoc8 from "@/assets/newdoctor-images (8).jpg"
 import newdoc9 from "@/assets/checkupimages (1).jpg"
 import newdoc10 from "@/assets/checkupimages (2).jpg"
 
+// Client Images
+import client1 from "@/assets/client-images (1).webp"
+import client2 from "@/assets/client-images (2).webp"
+import client3 from "@/assets/client-images (3).webp"
+import client4 from "@/assets/client-images (4).webp"
+import client5 from "@/assets/client-images (5).webp"
+import client6 from "@/assets/client-images (6).webp"
+import client7 from "@/assets/client-images (7).webp"
+import client8 from "@/assets/client-images (8).webp"
+import client9 from "@/assets/client-images (9).webp"
+import client10 from "@/assets/client-images (10).webp"
+import client11 from "@/assets/client-images (11).webp"
+import client12 from "@/assets/client-images (12).webp"
+import client13 from "@/assets/client-images (13).webp"
+
 // Categories with icons
 const categories = [
   { id: "all", label: "All Photos", icon: Grid3X3 },
@@ -132,6 +147,21 @@ const allImages = [
   { src: newdoc8, label: "Veterinary Specialist", category: "team" },
   { src: newdoc9, label: "Veterinary Specialist", category: "team" },
   { src: newdoc10, label: "Veterinary Specialist", category: "team" },
+  
+  // Client Images
+  { src: client1, label: "Happy Client", category: "pets" },
+  { src: client2, label: "Happy Client", category: "pets" },
+  { src: client3, label: "Happy Client", category: "pets" },
+  { src: client4, label: "Happy Client", category: "pets" },
+  { src: client5, label: "Happy Client", category: "pets" },
+  { src: client6, label: "Happy Client", category: "pets" },
+  { src: client7, label: "Happy Client", category: "pets" },
+  { src: client8, label: "Happy Client", category: "pets" },
+  { src: client9, label: "Happy Client", category: "pets" },
+  { src: client10, label: "Happy Client", category: "pets" },
+  { src: client11, label: "Happy Client", category: "pets" },
+  { src: client12, label: "Happy Client", category: "pets" },
+  { src: client13, label: "Happy Client", category: "pets" },
 ]
 
 // Lightbox Component
