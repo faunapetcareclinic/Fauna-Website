@@ -5,18 +5,19 @@ import { motion, AnimatePresence } from "framer-motion"
 import Layout from "@/components/Layout"
 import SEO from "@/components/SEO"
 import { Card } from "@/components/ui/card"
-import { 
-  Stethoscope, 
-  Building2, 
-  PawPrint, 
-  Scissors, 
-  Users, 
-  X, 
-  ChevronLeft, 
+import {
+  Stethoscope,
+  Building2,
+  PawPrint,
+  Scissors,
+  Users,
+  X,
+  ChevronLeft,
   ChevronRight,
   ZoomIn,
   Grid3X3,
-  Layers
+  Layers,
+  ShoppingBag
 } from "lucide-react"
 
 // Existing images
@@ -83,6 +84,15 @@ import client11 from "@/assets/client-images (11).webp"
 import client12 from "@/assets/client-images (12).webp"
 import client13 from "@/assets/client-images (13).webp"
 
+// Shop & Boarding Images
+import shop1 from "@/assets/Pet-Food-shop (1).webp"
+import shop2 from "@/assets/Pet-Food-shop (2).webp"
+import shop3 from "@/assets/Pet-Food-shop (3).webp"
+import shop4 from "@/assets/Pet-Food-shop (4).webp"
+import storefront from "@/assets/StoreFront.webp"
+import boarding1 from "@/assets/Cage.webp"
+import banner from "@/assets/banner.webp"
+
 // Categories with icons
 const categories = [
   { id: "all", label: "All Photos", icon: Grid3X3 },
@@ -90,6 +100,7 @@ const categories = [
   { id: "clinic", label: "Our Clinic", icon: Building2 },
   { id: "pets", label: "Happy Pets", icon: PawPrint },
   { id: "services", label: "Services", icon: Scissors },
+  { id: "shop", label: "Pet Shop", icon: ShoppingBag },
   { id: "team", label: "Our Team", icon: Users },
 ]
 
@@ -113,16 +124,16 @@ const allImages = [
   { src: checkup16, label: "Health Consultation", category: "checkup" },
   { src: checkup17, label: "Patient Care", category: "checkup" },
   { src: checkup18, label: "Wellness Check", category: "checkup" },
-  
+
   // Clinic & Facility
   { src: hero, label: "Our Clinic", category: "clinic" },
   { src: heroPremium, label: "Premium Facility", category: "clinic" },
-  
+
   // Pet Care
   { src: galleryPuppy, label: "Puppy Care", category: "pets" },
   { src: galleryCat, label: "Cat Wellness", category: "pets" },
   { src: galleryFamily, label: "Happy Families", category: "pets" },
-  
+
   // Services
   { src: g1, label: "Health Checkup", category: "services" },
   { src: g2, label: "Vaccination", category: "services" },
@@ -132,7 +143,7 @@ const allImages = [
   { src: groomingService, label: "Professional Grooming", category: "services" },
   { src: vaccinationService, label: "Vaccination Services", category: "services" },
   { src: healthcheckup, label: "Comprehensive Checkups", category: "services" },
-  
+
   // Doctors & Staff
   { src: doctorPremium, label: "Expert Doctors", category: "team" },
   { src: doctor, label: "Veterinary Care", category: "team" },
@@ -147,7 +158,7 @@ const allImages = [
   { src: newdoc8, label: "Veterinary Specialist", category: "team" },
   { src: newdoc9, label: "Veterinary Specialist", category: "team" },
   { src: newdoc10, label: "Veterinary Specialist", category: "team" },
-  
+
   // Client Images
   { src: client1, label: "Happy Client", category: "pets" },
   { src: client2, label: "Happy Client", category: "pets" },
@@ -162,17 +173,26 @@ const allImages = [
   { src: client11, label: "Happy Client", category: "pets" },
   { src: client12, label: "Happy Client", category: "pets" },
   { src: client13, label: "Happy Client", category: "pets" },
+
+  // Shop & Boarding
+  { src: shop1, label: "Premium Pet Food", category: "shop" },
+  { src: shop2, label: "Nutrition Shop", category: "shop" },
+  { src: shop3, label: "Pet Essentials", category: "shop" },
+  { src: shop4, label: "Curated Pet Food", category: "shop" },
+  { src: storefront, label: "Clinic Front", category: "clinic" },
+  { src: boarding1, label: "Pet Boarding Facility", category: "services" },
+  { src: banner, label: "Pet Boarding Facility", category: "services" },
 ]
 
 // Lightbox Component
-function Lightbox({ 
-  image, 
-  onClose, 
-  onPrev, 
-  onNext, 
-  hasPrev, 
-  hasNext 
-}: { 
+function Lightbox({
+  image,
+  onClose,
+  onPrev,
+  onNext,
+  hasPrev,
+  hasNext
+}: {
   image: typeof allImages[0]
   onClose: () => void
   onPrev: () => void
@@ -205,7 +225,7 @@ function Lightbox({
           <ChevronLeft className="w-8 h-8" />
         </button>
       )}
-      
+
       {hasNext && (
         <button
           onClick={(e) => { e.stopPropagation(); onNext() }}
@@ -244,11 +264,11 @@ function Lightbox({
 }
 
 // Gallery Card Component
-function GalleryCard({ 
-  image, 
-  index, 
-  onClick 
-}: { 
+function GalleryCard({
+  image,
+  index,
+  onClick
+}: {
   image: typeof allImages[0]
   index: number
   onClick: () => void
@@ -272,17 +292,17 @@ function GalleryCard({
             loading="lazy"
             className="w-full h-56 md:h-64 lg:h-72 object-cover transition-transform duration-700 group-hover:scale-110"
           />
-          
+
           {/* Overlay gradient */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          
+
           {/* Zoom icon */}
           <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
             <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center transform scale-50 group-hover:scale-100 transition-transform duration-300">
               <ZoomIn className="w-6 h-6 text-white" />
             </div>
           </div>
-          
+
           {/* Category badge */}
           {/* <div className="absolute top-3 left-3">
             <span className="px-3 py-1 text-xs font-medium bg-primary/90 text-white rounded-full capitalize">
@@ -290,7 +310,7 @@ function GalleryCard({
             </span>
           </div> */}
         </div>
-        
+
         {/* Card content */}
         {/* <div className="p-4 bg-gradient-to-br from-card to-card/50">
           <h3 className="font-heading font-semibold text-foreground group-hover:text-primary transition-colors">
@@ -301,7 +321,7 @@ function GalleryCard({
             Click to enlarge
           </p>
         </div> */}
-        
+
         {/* Hover border effect */}
         <div className="absolute inset-0 border-2 border-transparent group-hover:border-primary/30 rounded-lg transition-colors duration-300 pointer-events-none" />
       </Card>
@@ -315,8 +335,8 @@ const Gallery = () => {
   const [lightboxIndex, setLightboxIndex] = useState(0)
 
   // Filter images by category
-  const filteredImages = activeCategory === "all" 
-    ? allImages 
+  const filteredImages = activeCategory === "all"
+    ? allImages
     : allImages.filter(img => img.category === activeCategory)
 
   // Get category count
@@ -369,12 +389,12 @@ const Gallery = () => {
 
   return (
     <Layout>
-      <SEO 
+      <SEO
         title="Gallery — Our Clinic & Happy Pets"
         description="Browse photos of our premium veterinary clinic, expert staff, and happy pets at faunaPetcare Clinic in Hadapsar, Pune."
         canonical="/gallery"
       />
-      
+
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         {/* Background Pattern */}
@@ -382,7 +402,7 @@ const Gallery = () => {
         <div className="absolute inset-0" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23primary' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
         }} />
-        
+
         <div className="container mx-auto px-4 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -398,7 +418,7 @@ const Gallery = () => {
               Clinic Gallery
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Explore our state-of-the-art facility, meet our compassionate team, 
+              Explore our state-of-the-art facility, meet our compassionate team,
               and see the happy tails of pets we've cared for.
             </p>
           </motion.div>
@@ -418,8 +438,8 @@ const Gallery = () => {
                   onClick={() => setActiveCategory(category.id)}
                   className={`
                     relative flex items-center gap-2 px-5 py-2.5 rounded-full font-medium transition-all duration-300
-                    ${isActive 
-                      ? "bg-primary text-primary-foreground shadow-lg shadow-primary/25" 
+                    ${isActive
+                      ? "bg-primary text-primary-foreground shadow-lg shadow-primary/25"
                       : "bg-muted hover:bg-muted/80 text-muted-foreground hover:text-foreground"
                     }
                   `}
@@ -432,7 +452,7 @@ const Gallery = () => {
                   `}>
                     {getCategoryCount(category.id)}
                   </span>
-                  
+
                   {/* Active indicator */}
                   {isActive && (
                     <motion.div
@@ -450,7 +470,7 @@ const Gallery = () => {
 
       {/* Gallery Grid */}
       <section className="container mx-auto px-4 py-16">
-        <motion.div 
+        <motion.div
           layout
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
         >

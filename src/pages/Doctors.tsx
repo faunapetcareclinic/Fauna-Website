@@ -14,6 +14,7 @@ import {
   PawPrint,
   BadgeCheck,
   Users,
+  ShoppingBag,
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
@@ -39,6 +40,7 @@ const doctor = {
     { label: "Preventive Healthcare", icon: CheckCircle2 },
     { label: "Nutrition & Wellness Guidance", icon: Stethoscope },
     { label: "Hostelling for Cats and Small Dogs", icon: Users },
+    { label: "Pet Food Shop", icon: ShoppingBag },
   ],
   about: `Dr. Ruchali Ghatge is a dedicated veterinarian with over 9 years of experience in animal healthcare. Her practice is defined by a calm, focused approach and a deep respect for every life she treats. Working across small and large animals, she brings together clinical knowledge and steady hands to manage a wide range of medical and surgical cases.
 
@@ -143,7 +145,7 @@ const Doctors = () => (
                 <span className="font-heading font-bold text-lg leading-none">{doctor.experience}</span>
                 <span className="text-[11px] text-muted-foreground">Exp.</span>
               </div>
-              
+
             </div>
 
             {/* Contact / Location */}

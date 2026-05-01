@@ -7,7 +7,7 @@ const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
 const navLinks = ["Home", "About", "Services", "Doctors", "FAQ", "Gallery", "Contact"];
 
-const services = ["Health Checkups", "Vaccination", "Surgery", "Grooming",];
+const services = ["Health Checkups", "Vaccination", "Surgery", "Grooming", "Pet Food Shop", "Hostelling for Cats and Small Dogs"];
 
 const Footer = () => (
   <footer className="relative overflow-hidden border-t border-border">
@@ -136,16 +136,21 @@ const Footer = () => (
 
         {/* Services */}
         <div>
-          <h4 className="font-heading font-semibold text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-5">
-            Our Services
-          </h4>
+          <Link to="/services">
+            <h4 className="font-heading font-semibold text-[11px] uppercase tracking-[0.18em] text-muted-foreground mb-5 hover:text-primary transition-colors">
+              Our Services
+            </h4>
+          </Link>
           <ul className="flex flex-col gap-2.5">
             {services.map((s) => (
               <li key={s}>
-                <span className="text-sm text-muted-foreground flex items-center gap-1.5">
+                <Link
+                  to="/services"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200 flex items-center gap-1.5"
+                >
                   <span className="h-1 w-1 rounded-full bg-primary/50 shrink-0" />
                   {s}
-                </span>
+                </Link>
               </li>
             ))}
           </ul>

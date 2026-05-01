@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Phone, Stethoscope, Syringe, Scissors, Clock, Star, ArrowRight, HeartPulse, Shield, Award, Users, ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { Phone, Stethoscope, Syringe, Scissors, Clock, Star, ArrowRight, HeartPulse, Shield, Award, Users, ChevronLeft, ChevronRight, Quote, Cat, Dog } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/Layout";
@@ -13,6 +13,8 @@ import checkupImg from "@/assets/healtcheckup.webp";
 import vaccinationImg from "@/assets/Vaccination.webp";
 import groomingImg from "@/assets/Grooming.webp";
 import surgeryImg from "@/assets/service-surgery.webp";
+import hostellingImg from "@/assets/Cage.webp";
+import petFoodImg from "@/assets/StoreFront.webp";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -33,6 +35,8 @@ const services = [
   { title: "Vaccination", desc: "Complete immunization programs for lifelong protection", icon: Syringe, img: vaccinationImg, color: "from-accent/20 to-accent/5" },
   { title: "Surgery", desc: "State-of-the-art surgical care with expert precision", icon: HeartPulse, img: surgeryImg, color: "from-primary/20 to-primary/5" },
   { title: "Grooming", desc: "Premium spa-grade grooming for your beloved pet", icon: Scissors, img: groomingImg, color: "from-accent/20 to-accent/5" },
+  { title: "Cat & Small Dog Hostelling", desc: "Comfortable boarding in climate-controlled cages for cats and small dogs", icon: Cat, img: hostellingImg, color: "from-secondary/20 to-secondary/5" },
+  { title: "Pet Food Shop", desc: "Premium pet food selection for optimal nutrition", icon: Dog, img: petFoodImg, color: "from-warning/20 to-warning/5" },
 ];
 
 const stats = [
@@ -233,14 +237,16 @@ const Index = () => {
                     <s.icon className="h-5 w-5 text-primary-foreground" />
                   </div>
                 </div>
-                <CardContent className="p-6 relative">
-                  <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${s.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-                  <h3 className="font-heading text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">{s.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-                  <div className="mt-4 flex items-center text-sm text-primary font-medium opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                    Learn more <ArrowRight className="ml-1 h-3.5 w-3.5" />
-                  </div>
-                </CardContent>
+                <Link to="/services">
+                  <CardContent className="p-6 relative">
+                    <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${s.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                    <h3 className="font-heading text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">{s.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">{s.desc}</p>
+                    <div className="mt-4 flex items-center text-sm text-primary font-medium opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                      Learn more <ArrowRight className="ml-1 h-3.5 w-3.5" />
+                    </div>
+                  </CardContent>
+                </Link>
               </Card>
             </motion.div>
           ))}

@@ -9,6 +9,9 @@ import checkupImg from "@/assets/Grooming.webp";
 import vaccinationImg from "@/assets/Vaccination.webp";
 import groomingImg from "@/assets/gallery-grooming.webp";
 import surgeryImg from "@/assets/service-surgery.webp";
+import hostellingImg from "@/assets/Cage.webp";
+import petFoodImg from "@/assets/Pet-Food-shop (1).webp";
+import { Cat, ShoppingBag } from "lucide-react";
 
 const services = [
   {
@@ -54,6 +57,30 @@ const services = [
       "Gentle handling for a stress-free experience"
     ],
   },
+  {
+    title: "Cat and Small Dog Hostelling",
+    icon: Cat,
+    img: hostellingImg,
+    desc: "A safe and comforting space for your pets when you’re away. Our hostelling service is designed to maintain familiar routines, reduce stress, and provide attentive care—so your pet feels secure, relaxed, and well looked after at all times.",
+    features: [
+      "Clean, safe, and monitored boarding environment",
+      "Routine-based care to reduce stress and anxiety",
+      "Individual attention and gentle handling",
+      "Regular feeding, hygiene, and comfort checks"
+    ],
+  },
+  {
+    title: "Pet Food Shop",
+    icon: ShoppingBag,
+    img: petFoodImg,
+    desc: "Thoughtfully selected nutrition to support your pet’s health and well-being. We offer a curated range of quality food and dietary options, backed by practical guidance to help you make the right choice for your pet’s needs.",
+    features: [
+      "Wide range of quality dog and cat food",
+      "Specialized and medicated diet options",
+      "Nutrition guidance based on your pet’s needs",
+      "Trusted products from reliable brands"
+    ],
+  },
 ];
 
 const fadeUp = {
@@ -69,7 +96,7 @@ const Services = () => (
   <Layout>
     <SEO
       title="Our Services — Veterinary Care"
-      description="Explore our comprehensive veterinary services including health checkups, vaccinations, surgery, grooming, dental care, and emergency services at faunaPetcare Clinic."
+      description="Explore our premium veterinary services including health checkups, vaccinations, surgery, grooming, pet hostelling, and our specialized pet food shop at faunaPetcare Clinic."
       canonical="/services"
     />
     <section className="relative py-24 md:py-32 overflow-hidden">
@@ -109,7 +136,7 @@ const Services = () => (
                   </div>
                   <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">{s.title}</h2>
                 </div>
-                <p className="text-muted-foreground mb-8 leading-relaxed text-lg">{s.desc}</p>
+                <p className="text-muted-foreground mb-8 leading-relaxed text-lg whitespace-pre-wrap">{s.desc}</p>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
                   {s.features.map((f) => (
                     <li key={f} className="text-sm text-foreground/80 flex items-center gap-2.5">
