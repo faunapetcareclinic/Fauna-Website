@@ -201,9 +201,14 @@ const Footer = () => (
 
       {/* Bottom Bar */}
       <div className="border-t border-border py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-        <span className="text-xs text-muted-foreground">
-          © 2026 faunaPetcare Clinic. All rights reserved.
-        </span>
+        <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-4">
+          <span className="text-xs text-muted-foreground">
+            © 2026 faunaPetcare Clinic. All rights reserved.
+          </span>
+          <span className="text-sm text-muted-foreground">
+            Built with ❤  by <a href="https://preptechlab.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors font-medium">PrepTechLab</a>
+          </span>
+        </div>
 
         <div className="flex items-center gap-4">
           <span className="text-xs text-muted-foreground hidden sm:block">
